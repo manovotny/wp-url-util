@@ -6,7 +6,7 @@ module.exports = function (grunt) {
         config: {
             version: {
                 from: '0.0.0',
-                to: '0.0.0'
+                to: '0.1.0'
             }
         }
     });

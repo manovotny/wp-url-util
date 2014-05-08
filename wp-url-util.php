@@ -12,7 +12,7 @@
  * Plugin Name: WP Url Util
  * Plugin URI: https://github.com/manovotny/wp-url-util
  * Description: A url utility for WordPress.
- * Version: 0.0.0
+ * Version: 0.1.0
  * Author: Michael Novotny
  * Author URI: http://manovotny.com
  * License: GPL-3.0+
