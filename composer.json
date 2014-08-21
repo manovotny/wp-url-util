@@ -3,6 +3,9 @@
   "version": "0.2.0",
   "description": "A url utility for WordPress.",
   "type": "library",
-  "homepage": "https://github.com/manovotny/wp-url-util/",
-  "license": "GPL-3.0+"
+  "homepage": "https://github.com/manovotny/wp-url-util",
+  "license": "GPL-3.0+",
+  "require": {
+    "phpunit/phpunit": "4.1.*"
+  }
 }

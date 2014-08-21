@@ -1,0 +1,43 @@
+default:
+  - build
+
+init:
+  - config
+  - shell:install
+  - update
+  - build
+
+config:
+  - replace
+  - rename
+
+build:
+  - clean:js
+  - concat
+
+generate:
+  - makepot
+  - concat
+  - uglify
+
+update:
+  - clean:lib
+  - shell:update
+  - copy
+  - curl
+  - build
+
+lint:
+  - jshint
+  - jslint
+  - phplint
+
+test:
+  - phpunit
+
+release:
+  - lint
+  - test
+  - build
+  - generate
+  - replace:project_version

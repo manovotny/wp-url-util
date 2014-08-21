@@ -17,6 +17,8 @@
  * Author URI: http://manovotny.com
  * License: GPL-3.0+
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
+ * Domain Path: /lang
+ * Text Domain: wp-url-util
  * GitHub Plugin URI: https://github.com/manovotny/wp-url-util
  */
 
