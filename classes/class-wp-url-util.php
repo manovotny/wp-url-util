@@ -44,13 +44,13 @@ class WP_Url_Util {
      *
      * Note that the file must be in the WordPress content directory. File can be in a subdirectory.
      *
-     * @param string $file_path Path to file.
+     * @param string $path Path to file.
      * @return string Url to file.
      */
-    function convert_path_to_url( $file_path ) {
+    function convert_path_to_url( $path ) {
 
         // Remove WordPress content path from file path.
-        $file_base = str_replace( WP_CONTENT_DIR, '', $file_path );
+        $file_base = str_replace( WP_CONTENT_DIR, '', realpath( $path ) );
 
         // Add WordPress content url to file base.
         $file_url = content_url() . $file_base;
