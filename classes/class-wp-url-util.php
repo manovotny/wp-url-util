@@ -50,7 +50,7 @@ class WP_Url_Util {
     function convert_path_to_url( $path ) {
 
         // Remove WordPress content path from file path.
-        $file_base = str_replace( WP_CONTENT_DIR, '', realpath( $path ) );
+        $file_base = str_replace( WP_CONTENT_DIR, '', $path );
 
         // Add WordPress content url to file base.
         $file_url = content_url() . $file_base;
