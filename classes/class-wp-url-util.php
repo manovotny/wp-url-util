@@ -40,42 +40,38 @@ class WP_Url_Util {
     ---------------------------------------------------------------------------------- */
 
     /**
-     * Converts a path to a file into a url to the file.
+     * Converts an absolute path to a file into a url to the file.
      *
-     * Note that the file must be in the WordPress content directory. File can be in a subdirectory.
-     *
-     * @param string $path Path to file.
+     * @param string $absolute_path Absolute path to file.
      * @return string Url to file.
      */
-    function convert_path_to_url( $path ) {
+    function convert_path_to_url( $absolute_path ) {
 
-        // Remove WordPress content path from file path.
-        $file_base = str_replace( WP_CONTENT_DIR, '', $path );
+        // Remove WordPress installation path from file path.
+        $file_base = str_replace( $_SERVER[ 'DOCUMENT_ROOT' ], '', $absolute_path );
 
-        // Add WordPress content url to file base.
-        $file_url = content_url() . $file_base;
+        // Add site url to file base.
+        $file_url = site_url() . $file_base;
 
         return $file_url;
 
     }
 
     /**
-     * Converts a url to a file into a path to the file.
+     * Converts a url to a file into an absolute path to the file.
      *
-     * Note that the file must be in the WordPress content directory. File can be in a subdirectory.
-     *
-     * @param string $file_url Path to file.
-     * @return string Url to file.
+     * @param string $file_url Url to file.
+     * @return string Absolute path to file.
      */
     function convert_url_to_path( $file_url ) {
 
-        // Remove WordPress content url from file url.
-        $file_base = str_replace( content_url(), '', $file_url );
+        // Remove WordPress site url from file url.
+        $file_base = str_replace( site_url(), '', $file_url );
 
-        // Add WordPress content path to file base.
-        $file_path = WP_CONTENT_DIR . $file_base;
+        // Add WordPress installation path to file base.
+        $absolute_path = $_SERVER[ 'DOCUMENT_ROOT' ] . $file_base;
 
-        return $file_path;
+        return $absolute_path;
 
     }
 

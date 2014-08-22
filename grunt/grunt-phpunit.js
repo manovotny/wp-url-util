@@ -7,6 +7,7 @@ module.exports = function (grunt) {
     grunt.config('phpunit', {
         options: {
             bin: config.paths.phpunit,
+            bootstrap: config.paths.lib + '/wp-phpunit-helpers/wp-phpunit-helpers.php',
             colors: true
         },
         classes: {
