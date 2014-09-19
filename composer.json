@@ -1,12 +1,12 @@
 {
-  "name": "manovotny/wp-url-util",
-  "version": "0.3.0",
-  "description": "A url utility for WordPress.",
-  "type": "library",
-  "homepage": "https://github.com/manovotny/wp-url-util",
-  "license": "GPL-3.0+",
-  "require": {
-    "manovotny/wp-phpunit-helpers": "0.1.0",
-    "phpunit/phpunit": "4.1.*"
-  }
+    "name": "manovotny/wp-url-util",
+    "version": "0.3.0",
+    "description": "A url utility for WordPress.",
+    "type": "library",
+    "homepage": "https://github.com/manovotny/wp-url-util",
+    "license": "GPL-3.0+",
+    "require": {
+        "manovotny/wp-phpunit-helpers": "0.1.0",
+        "phpunit/phpunit": "4.1.*"
+    }
 }
