@@ -8,10 +8,8 @@ module.exports = function (grunt) {
         project: {
             options: {
                 include: [
-                    config.paths.admin + '/.*',
-                    config.paths.classes + '/.*',
-                    config.paths.inc + '/.*',
-                    config.paths.views + '/.*'
+                    config.paths.source + '/.*',
+                    'vendor/.*'
                 ],
                 processPot: function (pot) {
                     pot.headers['report-msgid-bugs-to'] = config.project.url + '/issues';

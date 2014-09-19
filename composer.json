@@ -4,9 +4,34 @@
     "description": "A url utility for WordPress.",
     "type": "library",
     "homepage": "https://github.com/manovotny/wp-url-util",
+    "authors": [
+        {
+            "name": "Michael Novotny",
+            "email": "manovotny@gmail.com",
+            "homepage": "http://manovotny.com",
+            "role": "Developer"
+        }
+    ],
     "license": "GPL-3.0+",
-    "require": {
+    "keywords": [
+        "url",
+        "utility",
+        "wordpress"
+    ],
+    "require-dev": {
         "manovotny/wp-phpunit-helpers": "0.1.0",
         "phpunit/phpunit": "4.1.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src"
+        ]
+    },
+    "autoload-dev": {
+        "classmap": [
+            "vendor/phpunit",
+            "vendor/sebastian",
+            "vendor/symfony"
+        ]
     }
 }

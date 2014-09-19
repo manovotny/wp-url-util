@@ -12,28 +12,35 @@ config:
   - rename
 
 build:
+  - clean
   - lint
   - test
+  - browserify:admin
+  - browserify:site
+  - sass
 
 generate:
+  - autoprefixer
+  - cssmin
   - makepot
+  - browserify
 
 update:
-  - clean:lib
   - shell:update
-  - copy
+  - curl
   - build
 
 lint:
-  - jslint
+  - jshint
   - phplint
+  - scsslint
 
 test:
   - phpunit
 
 release:
-  - lint
-  - test
   - build
-  - generate
   - replace:project_version
+  - replace:update_project
+  - generate
+  - shell:release

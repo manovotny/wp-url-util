@@ -4,6 +4,8 @@ module.exports = function (grunt) {
 
     var config = require('config'),
         replace = require('../config/replace.js'),
+
+        replaceFile = 'config/replace.js',
         overwrite = true;
 
     grunt.config('replace', {
@@ -17,10 +19,6 @@ module.exports = function (grunt) {
                 {
                     from: '"email": "' + replace.author.email + '"',
                     to: '"email": "' + config.author.email + '"'
-                },
-                {
-                    from: ' <' + replace.author.email + '>',
-                    to: ' <' + config.author.email + '>'
                 }
             ]
         },
@@ -31,10 +29,6 @@ module.exports = function (grunt) {
             ],
             overwrite: overwrite,
             replacements: [
-                {
-                    from: '@author ' + replace.author.name,
-                    to: '@author ' + config.author.name
-                },
                 {
                     from: 'Author: ' + replace.author.name,
                     to: 'Author: ' + config.author.name
@@ -72,7 +66,7 @@ module.exports = function (grunt) {
         },
         author_username: {
             src: [
-                config.files.style
+                'style.css'
             ],
             overwrite: overwrite,
             replacements: [
@@ -84,7 +78,7 @@ module.exports = function (grunt) {
         },
         project_composer: {
             src: [
-                config.files.composer
+                'composer.json'
             ],
             overwrite: overwrite,
             replacements: [
@@ -94,26 +88,12 @@ module.exports = function (grunt) {
                 }
             ]
         },
-        project_copytright: {
-            src: [
-                '**/*.php'
-            ],
-            overwrite: overwrite,
-            replacements: [
-                {
-                    from: '@copyright ' + replace.project.copyright,
-                    to: '@copyright ' + config.project.copyright
-                }
-            ]
-        },
         project_description: {
             src: [
                 '*.php',
-                config.files.bower,
-                config.files.composer,
-                config.files.package,
-                config.files.readme,
-                config.files.style
+                '*.json',
+                'README.md',
+                'style.css'
             ],
             overwrite: overwrite,
             replacements: [
@@ -126,10 +106,6 @@ module.exports = function (grunt) {
                     to: 'Description: ' + config.project.description
                 },
                 {
-                    from: '* ' + replace.project.description,
-                    to: '* ' + config.project.description
-                },
-                {
                     from: replace.project.description,
                     to: config.project.description
                 }
@@ -137,8 +113,8 @@ module.exports = function (grunt) {
         },
         project_git: {
             src: [
-                config.files.bower,
-                config.files.package
+                'bower.json',
+                'package.json'
             ],
             overwrite: overwrite,
             replacements: [
@@ -151,7 +127,7 @@ module.exports = function (grunt) {
         project_name: {
             src: [
                 '*.php',
-                config.files.style
+                'style.css'
             ],
             overwrite: overwrite,
             replacements: [
@@ -165,23 +141,11 @@ module.exports = function (grunt) {
                 }
             ]
         },
-        project_package: {
-            src: [
-                '**/*.php'
-            ],
-            overwrite: overwrite,
-            replacements: [
-                {
-                    from: '@package ' + replace.project.package,
-                    to: '@package ' + config.project.package
-                }
-            ]
-        },
         project_slug: {
             src: [
-                config.files.bower,
-                config.files.package,
-                config.files.readme
+                'bower.json',
+                'package.json',
+                'README.md'
             ],
             overwrite: overwrite,
             replacements: [
@@ -198,15 +162,11 @@ module.exports = function (grunt) {
         project_url: {
             src: [
                 '*.php',
-                config.files.composer,
-                config.files.style
+                'composer.json',
+                'style.css'
             ],
             overwrite: overwrite,
             replacements: [
-                {
-                    from: '@link ' + replace.project.url,
-                    to: '@link ' + config.project.url
-                },
                 {
                     from: 'GitHub Plugin URI: ' + replace.project.url,
                     to: 'GitHub Plugin URI: ' + config.project.url
@@ -232,11 +192,11 @@ module.exports = function (grunt) {
         project_version: {
             src: [
                 '*.php',
-                config.paths.classes + '/**/*.php',
+                '*.json',
 
-                config.files.bower,
-                config.files.composer,
-                config.files.package
+                config.paths.source + '/classes/*.php',
+
+                'style.css'
             ],
             overwrite: overwrite,
             replacements: [
@@ -257,7 +217,7 @@ module.exports = function (grunt) {
         translations_domain: {
             src: [
                 '*.php',
-                config.files.style
+                'style.css'
             ],
             overwrite: overwrite,
             replacements: [
@@ -270,7 +230,7 @@ module.exports = function (grunt) {
         translations_path: {
             src: [
                 '*.php',
-                config.files.style
+                'style.css'
             ],
             overwrite: overwrite,
             replacements: [
@@ -282,97 +242,93 @@ module.exports = function (grunt) {
         },
         update_author: {
             src: [
-                config.paths.config + '/' + config.files.replace
+                replaceFile
             ],
             overwrite: overwrite,
             replacements: [
                 {
-                    from: "email: '" + replace.author.email + "'",
-                    to: "email: '" + config.author.email + "'"
+                    from: 'email: \'' + replace.author.email + '\'',
+                    to: 'email: \'' + config.author.email + '\''
                 },
                 {
-                    from: "name: '" + replace.author.name + "'",
-                    to: "name: '" + config.author.name + "'"
+                    from: 'name: \'' + replace.author.name + '\'',
+                    to: 'name: \'' + config.author.name + '\''
                 },
                 {
-                    from: "url: '" + replace.author.url + "'",
-                    to: "url: '" + config.author.url + "'"
+                    from: 'url: \'' + replace.author.url + '\'',
+                    to: 'url: \'' + config.author.url + '\''
                 }
             ]
         },
         update_project: {
             src: [
-                config.paths.config + '/' + config.files.replace
+                replaceFile
             ],
             overwrite: overwrite,
             replacements: [
                 {
-                    from: "composer: '" + replace.project.copyright + "'",
-                    to: "composer: '" + config.project.copyright + "'"
+                    from: 'composer: \'' + replace.project.copyright + '\'',
+                    to: 'composer: \'' + config.project.copyright + '\''
                 },
                 {
-                    from: "copyright: '" + replace.project.copyright + "'",
-                    to: "copyright: '" + config.project.copyright + "'"
+                    from: 'copyright: \'' + replace.project.copyright + '\'',
+                    to: 'copyright: \'' + config.project.copyright + '\''
                 },
                 {
-                    from: "description: '" + replace.project.description + "'",
-                    to: "description: '" + config.project.description + "'"
+                    from: 'description: \'' + replace.project.description + '\'',
+                    to: 'description: \'' + config.project.description + '\''
                 },
                 {
-                    from: "domain: '" + replace.translations.domain + "'",
-                    to: "domain: '" + config.project.slug + "'"
+                    from: 'domain: \'' + replace.translations.domain + '\'',
+                    to: 'domain: \'' + config.project.slug + '\''
                 },
                 {
-                    from: "git: '" + replace.project.git + "'",
-                    to: "git: '" + config.project.git + "'"
+                    from: 'git: \'' + replace.project.git + '\'',
+                    to: 'git: \'' + config.project.git + '\''
                 },
                 {
-                    from: "name: '" + replace.project.name + "'",
-                    to: "name: '" + config.project.name + "'"
+                    from: 'name: \'' + replace.project.name + '\'',
+                    to: 'name: \'' + config.project.name + '\''
                 },
                 {
-                    from: "package: '" + replace.project.package + "'",
-                    to: "package: '" + config.project.package + "'"
+                    from: 'path: \'' + replace.translations.path + '\'',
+                    to: 'path: \'' + config.paths.translations + '\''
                 },
                 {
-                    from: "path: '" + replace.translations.path + "'",
-                    to: "path: '" + config.paths.translations + "'"
+                    from: 'slug: \'' + replace.project.slug + '\'',
+                    to: 'slug: \'' + config.project.slug + '\''
                 },
                 {
-                    from: "slug: '" + replace.project.slug + "'",
-                    to: "slug: '" + config.project.slug + "'"
+                    from: 'type: \'' + replace.project.type + '\'',
+                    to: 'type: \'' + config.project.type + '\''
                 },
                 {
-                    from: "type: '" + replace.project.type + "'",
-                    to: "type: '" + config.project.type + "'"
+                    from: 'url: \'' + replace.project.url + '\'',
+                    to: 'url: \'' + config.project.url + '\''
                 },
                 {
-                    from: "url: '" + replace.project.url + "'",
-                    to: "url: '" + config.project.url + "'"
+                    from: 'username: \'' + replace.project.username + '\'',
+                    to: 'username: \'' + config.project.username + '\''
                 },
                 {
-                    from: "username: '" + replace.project.username + "'",
-                    to: "username: '" + config.project.username + "'"
-                },
-                {
-                    from: "version: '" + replace.project.version + "'",
-                    to: "version: '" + config.project.version + "'"
+                    from: 'version: \'' + replace.project.version + '\'',
+                    to: 'version: \'' + config.project.version + '\''
                 }
             ]
         },
         update_translations: {
             src: [
-                config.paths.config + '/' + config.files.replace
+                replaceFile
             ],
             overwrite: overwrite,
             replacements: [
                 {
-                    from: "domain: '" + replace.translations.domain + "'",
-                    to: "domain: '" + config.project.slug + "'"
+                    from: 'domain: \'' + replace.translations.domain + '\'',
+                    to: 'domain: \'' + config.project.slug + '\''
                 },
                 {
-                    from: "path: '" + replace.translations.path + "'",
-                    to: "path: '" + config.paths.translations + "'"
+                    from: 'path: \'' + replace.translations.path + '\'',
+                    to: 'path: \'' + config.paths.translations + '\''
                 }
             ]
         }

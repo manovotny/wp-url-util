@@ -1,6 +1,6 @@
 <?php
 
-require 'classes/class-wp-url-util.php';
+require_once 'vendor/autoload.php';
 
 class WP_Url_Util_Test extends PHPUnit_Framework_TestCase {
 

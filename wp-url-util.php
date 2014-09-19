@@ -32,11 +32,11 @@ if ( ! defined( 'WPINC' ) ) {
 
 }
 
-/* Plugin
+/* Composer
 ---------------------------------------------------------------------------------- */
 
-if ( ! class_exists( 'WP_Url_Util' ) ) {
+if ( file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 
-    require_once __DIR__ . '/classes/class-wp-url-util.php';
+    require __DIR__ . '/vendor/autoload.php';
 
 }

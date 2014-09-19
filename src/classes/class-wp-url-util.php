@@ -1,8 +1,4 @@
 <?php
-/**
- * @package WP_Url_Util
- * @author Michael Novotny <manovotny@gmail.com>
- */
 
 class WP_Url_Util {
 
