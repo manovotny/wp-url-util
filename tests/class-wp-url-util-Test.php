@@ -37,6 +37,42 @@ class WP_Url_Util_Test extends PHPUnit_Framework_TestCase {
 
     }
 
+    public function test_get_file_extension() {
+
+        $file_name = any_string();
+        $file_extension = 'js';
+        $url = 'http://google.com/' . $file_name . '.' . $file_extension;
+
+        $result = $this->wp_url_util->get_file_extension( $url );
+
+        $this->assertEquals( $file_extension, $result );
+
+    }
+
+    public function test_get_file_name() {
+
+        $file_name = any_string();
+        $file_extension = 'js';
+        $url = 'http://google.com/' . $file_name . '.' . $file_extension;
+
+        $result = $this->wp_url_util->get_file_name( $url );
+
+        $this->assertEquals( $file_name, $result );
+
+    }
+
+    public function test_get_file_name_and_extension() {
+
+        $file_name = any_string();
+        $file_extension = 'js';
+        $url = 'http://google.com/' . $file_name . '.' . $file_extension;
+
+        $result = $this->wp_url_util->get_file_name_and_extension( $url );
+
+        $this->assertEquals( $file_name . '.' . $file_extension, $result );
+
+    }
+
     public function test_is_external_file_returns_true() {
 
         $url = 'http://google.com/' . any_string() . '.js';

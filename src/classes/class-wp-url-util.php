@@ -72,6 +72,42 @@ class WP_Url_Util {
     }
 
     /**
+     * Extracts file extension from a file, path, or url.
+     *
+     * @param string $file A file name, path, or url.
+     * @return string The file extension.
+     */
+    public function get_file_extension( $file )  {
+
+        return pathinfo( $file, PATHINFO_EXTENSION );
+
+    }
+
+    /**
+     * Extracts file name from a file, path, or url.
+     *
+     * @param  string $file A file, path, or url.
+     * @return string The file name.
+     */
+    public function get_file_name( $file ) {
+
+        return pathinfo( $file, PATHINFO_FILENAME );
+
+    }
+
+    /**
+     * Extracts file name and extension from a file, path, or url.
+     *
+     * @param string $file A file, path, or url.
+     * @return string The file name and extension.
+     */
+    public function get_file_name_and_extension( $file ) {
+
+        return pathinfo( $file, PATHINFO_BASENAME );
+
+    }
+
+    /**
      * Determines if a file is externally hosted based on url.
      *
      * @param string $file_url File url.
