@@ -15,15 +15,6 @@ build:
   - clean
   - lint
   - test
-  - browserify:admin
-  - browserify:site
-  - sass
-
-generate:
-  - autoprefixer
-  - cssmin
-  - makepot
-  - browserify
 
 update:
   - shell:update
@@ -33,7 +24,6 @@ update:
 lint:
   - jshint
   - phplint
-  - scsslint
 
 test:
   - phpunit
@@ -42,5 +32,4 @@ release:
   - build
   - replace:project_version
   - replace:update_project
-  - generate
   - shell:release
