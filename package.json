@@ -1,6 +1,6 @@
 {
     "name": "wp-url-util",
-    "version": "0.3.0",
+    "version": "1.0.0",
     "description": "A url utility for WordPress.",
     "author": "Michael Novotny <http://manovotny.com/>",
     "repository": {
@@ -19,7 +19,7 @@
         "grunt-rename": "~0.1.4",
         "grunt-shell": "~1.1.1",
         "grunt-text-replace": "~0.3.12",
-        "jshint-stylish": "~0.4.0",
+        "jshint-stylish": "~1.0.0",
         "load-grunt-config": "~0.13.1",
         "lodash": "~2.4.1",
         "time-grunt": "~1.0.0"

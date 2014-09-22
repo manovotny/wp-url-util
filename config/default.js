@@ -25,7 +25,7 @@ module.exports = (function () {
             slug: 'wp-url-util',
             type: 'plugin', // Should be `plugin` or `theme`.
             url: 'https://github.com/manovotny/wp-url-util',
-            version: '0.3.0'
+            version: '1.0.0'
         }
     };
 
