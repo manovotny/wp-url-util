@@ -10,7 +10,7 @@ module.exports = function (grunt) {
             ].join('&&')
         },
         release: {
-            command: 'composer dump-autoload --optimize'
+            command: 'composer install --no-dev --optimize-autoloader'
         },
         update: {
             command: [
