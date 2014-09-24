@@ -25,6 +25,9 @@
     "autoload": {
         "classmap": [
             "src"
+        ],
+        "files": [
+            "wp-url-util.php"
         ]
     },
     "autoload-dev": {

@@ -144,6 +144,7 @@ module.exports = function (grunt) {
         project_slug: {
             src: [
                 'bower.json',
+                'composer.json',
                 'package.json',
                 'README.md'
             ],
@@ -152,6 +153,10 @@ module.exports = function (grunt) {
                 {
                     from: '"name": "' + replace.project.slug + '"',
                     to: '"name": "' + config.project.slug + '"'
+                },
+                {
+                    from: replace.project.slug + '.php',
+                    to: config.project.slug + '.php'
                 },
                 {
                     from: replace.project.slug,
