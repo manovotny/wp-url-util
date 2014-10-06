@@ -1,6 +1,6 @@
 {
     "name": "wp-url-util",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A url utility for WordPress.",
     "repository": {
         "type": "git",

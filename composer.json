@@ -1,6 +1,6 @@
 {
     "name": "manovotny/wp-url-util",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "description": "A url utility for WordPress.",
     "type": "library",
     "homepage": "https://github.com/manovotny/wp-url-util",
