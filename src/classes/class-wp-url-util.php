@@ -44,10 +44,10 @@ class WP_Url_Util {
     function convert_path_to_url( $absolute_path ) {
 
         // Remove WordPress installation path from file path.
-        $file_base = str_replace( $_SERVER[ 'DOCUMENT_ROOT' ], '', $absolute_path );
+        $file_base = str_replace( ABSPATH, '', $absolute_path );
 
         // Add site url to file base.
-        $file_url = site_url() . $file_base;
+        $file_url = trailingslashit( site_url() ) . $file_base;
 
         return $file_url;
 
@@ -62,10 +62,10 @@ class WP_Url_Util {
     function convert_url_to_path( $file_url ) {
 
         // Remove WordPress site url from file url.
-        $file_base = str_replace( site_url(), '', $file_url );
+        $file_base = str_replace( trailingslashit( site_url() ), '', $file_url );
 
         // Add WordPress installation path to file base.
-        $absolute_path = $_SERVER[ 'DOCUMENT_ROOT' ] . $file_base;
+        $absolute_path = ABSPATH . $file_base;
 
         return $absolute_path;
 
