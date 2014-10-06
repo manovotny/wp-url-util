@@ -18,8 +18,11 @@
         "utility",
         "wordpress"
     ],
+    "require": {
+
+    },
     "require-dev": {
-        "manovotny/wp-phpunit-helpers": "0.1.0",
+        "manovotny/wp-phpunit-helpers": "~1.0",
         "phpunit/phpunit": "4.1.*"
     },
     "autoload": {
