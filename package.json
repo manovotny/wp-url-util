@@ -1,6 +1,6 @@
 {
     "name": "wp-url-util",
-    "version": "1.0.3",
+    "version": "2.0.0",
     "description": "A url utility for WordPress.",
     "author": "Michael Novotny <http://manovotny.com/>",
     "repository": {

@@ -16,7 +16,7 @@ module.exports = (function () {
             name: 'WP Url Util',
             slug: 'wp-url-util',
             url: 'https://github.com/manovotny/wp-url-util',
-            version: '1.0.3'
+            version: '2.0.0'
         },
         translations: {
             domain: 'wp-url-util',
