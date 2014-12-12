@@ -41,7 +41,7 @@ class WP_Url_Util {
      * @param string $absolute_path Absolute path to file.
      * @return string Url to file.
      */
-    function convert_path_to_url( $absolute_path ) {
+    function convert_absolute_path_to_url( $absolute_path ) {
 
         // Remove WordPress installation path from file path.
         $file_base = str_replace( ABSPATH, '', $absolute_path );
@@ -59,7 +59,7 @@ class WP_Url_Util {
      * @param string $file_url Url to file.
      * @return string Absolute path to file.
      */
-    function convert_url_to_path( $file_url ) {
+    function convert_url_to_absolute_path( $file_url ) {
 
         // Remove WordPress site url from file url.
         $file_base = str_replace( trailingslashit( site_url() ), '', $file_url );

@@ -12,26 +12,26 @@ class WP_Url_Util_Test extends PHPUnit_Framework_TestCase {
 
     }
 
-    public function test_convert_path_to_url() {
+    public function test_convert_absolute_path_to_url() {
 
         $file = '/' . any_string() . '/inc/' . any_string() . '.php';
         $expected_result = plugins_url() . $file;
         $path = WP_PLUGIN_DIR . $file;
 
-        $result = $this->wp_url_util->convert_path_to_url( $path );
+        $result = $this->wp_url_util->convert_absolute_path_to_url( $path );
 
         $this->assertEquals( $expected_result, $result );
 
     }
 
-    public function test_convert_url_to_path() {
+    public function test_convert_url_to_absolute_path() {
 
         $file = '/' . any_string() . '/inc/' . any_string() . '.php';
 
         $expected_result = WP_PLUGIN_DIR . $file;
         $url = plugins_url() . $file;
 
-        $result = $this->wp_url_util->convert_url_to_path( $url );
+        $result = $this->wp_url_util->convert_url_to_absolute_path( $url );
 
         $this->assertEquals( $expected_result, $result );
 
