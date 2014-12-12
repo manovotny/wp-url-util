@@ -36,6 +36,18 @@ class WP_Url_Util {
     ---------------------------------------------------------------------------------- */
 
     /**
+     * Converts an absolute path to a root path.
+     *
+     * @param string $absolute_path Absolute path.
+     * @return string Root path.
+     */
+    function convert_absolute_path_to_root_path( $absolute_path ) {
+
+        return str_replace( ABSPATH, '/', $absolute_path );
+
+    }
+
+    /**
      * Converts an absolute path to a file into a url to the file.
      *
      * @param string $absolute_path Absolute path to file.

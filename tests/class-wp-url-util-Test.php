@@ -12,6 +12,18 @@ class WP_Url_Util_Test extends PHPUnit_Framework_TestCase {
 
     }
 
+    public function test_convert_absolute_path_to_root_path() {
+
+        $path = any_string() . '/inc/' . any_string() . '.php';
+        $expected_path = '/' . $path;
+        $absolute_path = ABSPATH . $path;
+
+        $result = $this->wp_url_util->convert_absolute_path_to_root_path( $absolute_path );
+
+        $this->assertEquals( $expected_path, $result );
+
+    }
+
     public function test_convert_absolute_path_to_url() {
 
         $file = '/' . any_string() . '/inc/' . any_string() . '.php';
